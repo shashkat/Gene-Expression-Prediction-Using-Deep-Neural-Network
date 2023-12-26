@@ -1,0 +1,1 @@
+I need to figure out the format of ATACseq bed files (column headers as I am assuming the score to just be one column and at may not be completely right and all my analysis could be wrong because of that).
