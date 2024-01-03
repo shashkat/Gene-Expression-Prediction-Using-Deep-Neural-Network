@@ -7,7 +7,9 @@ In this project, I have tried to predict the expression of genes of a sample usi
 
 ## Data
 
-The data (both, RNAseq and ATACseq) was obtained from the ENCODE website: https://www.encodeproject.org/. The human genes' data was downloaded from the Ensembl website: https://ensembl.org/.
+The data (ATACseq) was obtained from the ENCODE website: https://www.encodeproject.org/. 
+The human genes' data was downloaded from the Ensembl website: https://ensembl.org/.
+The RNAseq data wasnt downloaded in a processed form, though it was still obtained from the ENCODE website. The raw fastq files were downloaded and they were processed by Kallisto (https://github.com/pachterlab/kallisto) to obtain the transcript abundances. This pipeline was implemented on Nextflow (https://www.nextflow.io/) for better scalability.
 
 ## Methodology
 
@@ -26,3 +28,5 @@ The biggest limitation of this project as of now is the lack of datapoints. The 
 
 - ENCODE- https://www.encodeproject.org/
 - Ensembl- https://ensembl.org/
+- Kallisto- https://github.com/pachterlab/kallisto
+- Nextflow- https://www.nextflow.io/

@@ -39,3 +39,77 @@ Okay, so I have been able to successfully create the output for the model (its p
 Now, I need to think of what would be the best ways to improve the predictions of the model and also how to quantify the quality of its output. Something like correlation comes to my mind, but i will inquire more about it.
 
 So doing like 10000 epochs improved my training accuracy (it had to do that). Currently, the model is probably overfitted. I need to check how well it generalizes to other data that I have.
+
+
+## Objective 2- Learning Preprocessing
+
+(12-30-23)
+
+Trying to mimic the processing of the raw fastq files, to obtain as close as possible processed files to the ones obtained from ENCODE. Once the whole preprocessing pipeline is decided upon/understood, I will go on to properly implement it using Nextflow (I have learnt its basics). 
+
+There are many steps in the processing. I am gonna focus on obtaining the gene quantifications initially (as that is what I have used as input in the DL model), and the steps in that as shown in the Association Graph for the experiment/s in ENCODE is:
+
+- Aligning reads with reference genome and QA (Quality Assesment) calculation
+- Using RSEM for gene quantifications (also needs genome index file as input)
+
+make STARforMacStatic CXXFLAGS_SIMD="" CXX=/opt/homebrew/opt/gcc/bin/g++-13
+
+make STARforMacStatic CXXFLAGS_SIMD="-march=native" CXX=/opt/homebrew/opt/gcc/bin/g++-13
+
+not able to compile STAR because of ARM architecture of my cpu. Tomorrow will try using rosetta 2
+
+(12-31-23)
+
+Actually, it appears that I can use the precompiled STAR file (inside STAR-2.7.11a/bin/MacOSX_x86_64) on my ARM mac, probably because of Rosetta (I believe it is installed as this thing checked out (https://apple.stackexchange.com/questions/427970/how-to-tell-if-m1-mac-has-rosetta-installed)).
+
+So, I am gonna try to do the alignment using the pre-compiled binary (Downloads/STAR-2.7.11a/bin/MacOSX_x86_64).
+
+STAR --genomeDir genome \
+--readFilesIn raw_data/ENCFF696ETL.fastq.gz \
+--readFilesCommand zcat
+
+Okay, so i cannot use the genome index from the ENCODE website straight as there are a few more files related to it which are made while creating the genome index. I probably need to build the index myself. And for that, I will need 100gb of disk space. And for that, I will need to empty my hard-drive. To build the genome index, the GTF and the genome sequencing file (fasta/fastq) are required. So the next step will be to download these files and arrange for space (in the hard-drive probably). 
+
+(1-1-24)
+
+I emptied my harddrive after taking backup in my cmu gdrive, what i thought was important in the harddrive.
+
+(1-2-24)
+
+Now, I have to proceed with making the genome index. For this, I required 100gb of space and hence will do this in my harddrive. I will use STAR to do this. But first, I need to download the human genome fasta and corresponding GTF file.
+
+Following command was used (from location of harddrive) to make the genome index file/s.
+
+STAR --runMode genomeGenerate \
+--genomeDir genome_index \
+--genomeFastaFiles GRCh38_latest_genomic.fna \
+--sjdbGTFfile GRCh38_latest_genomic.gff 
+
+ran this command at 12:40. Lets see how long it takes to execute. After around 15 minutes, deciding to change --runThreadN to 8.
+
+STAR --runThreadN 8 \
+--runMode genomeGenerate \
+--genomeDir genome_index \
+--genomeFastaFiles GRCh38_latest_genomic.fna \
+--sjdbGTFfile GRCh38_latest_genomic.gff 
+
+Apparently STAR requires 30gb of RAM at-least. So this command will take infinetely long in my PC with miniscule 8gb RAM. So, I need to figure out something else. I can actually find the prebuilt genome index (and all related files) on the net, but probably the aligning later would also require 30gb RAM, so need another solution. So possible ideas are:
+
+- use AWS instances for more RAM and compute the results on it.
+- try to find the CMU services for such tasks.
+- use Kallisto as it doesnt perform actual alignment, but pseudoalignment (still i think good results) and also requires way less RAM (8GB suffices).
+
+I will probably go for second option- Kallisto. I set up kallisto, which involved downloading a prebuilt human kallisto index file, and running the kallisto quant by supplying the fastq of the tissue reads. The -l and -s flags are the "fragment" mean length and std deviation. Fragment means transcript and not read, and this value can be estimated by using a GTF file or by using bam file and the picard tool (but i dont have a bam file). For now I will use random values (180 and 20, which were in webpage by default).
+
+kallisto quant -i index.idx -o output -b 100 --single -l 180 -s 20 ENCFF696ETL.fastq.gz
+
+index is outdated (was created by an older version of kallisto), hence need to create my own. Okay, so I didnt actually need to create my own index file. Initially I donwloaded the index file using the command specified in the repository, but that was outdated. The updated one was in the link specified in the Intro of the Readme of the repository. Final command which worked-
+
+kallisto quant -i human_index_standard/index.idx -o output -b 100 --single -l 180 -s 20 ENCFF696ETL.fastq.gz. 
+
+Conclusions for the day: need more resources (RAM) for STAR and RSEM. Kallisto much better tool- faster and with comparable results. However, I wanted to try out Nextflow pipeline making, and I think the whole pipeline has reduced to just one step with Kallisto, so how do make a pipeline of it?
+
+Also, for the ATACseq data, apparently there are a bit more steps. Kallisto will probably not be a good choice for ATACseq (Kallisto is specifically made for RNAseq data processing). 
+
+So, I can try that next- see what are the tools and how many of those can be run on my pc and if there is a pseudo-aligner type thing for ATACseq data too.
+

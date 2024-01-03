@@ -1,0 +1,39 @@
+STAR version=2.7.11a
+STAR compilation time,server,dir= :/Users/distiller/project/STARcompile/source
+STAR git: On branch master ; commit d57f92d95169a1bb97de791df0321f42634f18c8 ; diff files: 
+##### Command Line:
+STAR --genomeDir ENCFF598IDH.tar.gz --readFilesIn raw_data/ENCFF696ETL.fastq.gz --readFilesCommand zcat
+##### Initial USER parameters from Command Line:
+###### All USER parameters from Command Line:
+genomeDir                     ENCFF598IDH.tar.gz     ~RE-DEFINED
+readFilesIn                   raw_data/ENCFF696ETL.fastq.gz        ~RE-DEFINED
+readFilesCommand              zcat        ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+genomeDir                         ENCFF598IDH.tar.gz
+readFilesIn                       raw_data/ENCFF696ETL.fastq.gz   
+readFilesCommand                  zcat   
+
+-------------------------------
+##### Final effective command line:
+STAR   --genomeDir ENCFF598IDH.tar.gz   --readFilesIn raw_data/ENCFF696ETL.fastq.gz      --readFilesCommand zcat   
+----------------------------------------
+
+Number of fastq files for each mate = 1
+
+   Input read files for mate 1 :
+-rw-r--r--@ 1 shashankkatiyar  staff  2734493980 Dec 30 14:49 raw_data/ENCFF696ETL.fastq.gz
+
+   readsCommandsFile:
+exec > "./_STARtmp/tmp.fifo.read1"
+echo FILE 0
+zcat      "raw_data/ENCFF696ETL.fastq.gz"
+
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+Finished loading and checking parameters
+
+EXITING because of FATAL ERROR: could not open genome file ENCFF598IDH.tar.gz//genomeParameters.txt
+SOLUTION: check that the path to genome files, specified in --genomeDir is correct and the files are present, and have user read permsissions
+
+Dec 31 13:19:49 ...... FATAL ERROR, exiting
