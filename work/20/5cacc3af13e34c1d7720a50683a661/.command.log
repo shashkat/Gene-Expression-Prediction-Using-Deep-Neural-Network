@@ -1,0 +1,3 @@
+gunzip: can't stat: [ENCFF696ETL.fastq.gz, ([ENCFF696ETL.fastq.gz,.gz): No such file or directory
+gunzip: can't stat: ENCFF657UWH.fastq.gz, (ENCFF657UWH.fastq.gz,.gz): No such file or directory
+gunzip: can't stat: ENCFF326UXM.fastq.gz] (ENCFF326UXM.fastq.gz].gz): No such file or directory

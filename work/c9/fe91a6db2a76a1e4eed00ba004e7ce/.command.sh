@@ -1,0 +1,4 @@
+#!/bin/bash -ue
+gunzip -k /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file1.txt.gz
+/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file3.txt.gz
+/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file2.txt.gz

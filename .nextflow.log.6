@@ -1,0 +1,82 @@
+Jan-04 23:58:27.220 [main] DEBUG nextflow.cli.Launcher - $> nextflow run workflow.nf
+Jan-04 23:58:27.272 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Jan-04 23:58:27.284 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/shashankkatiyar/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Jan-04 23:58:27.289 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-04 23:58:27.289 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-04 23:58:27.291 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jan-04 23:58:27.297 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-04 23:58:27.340 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Jan-04 23:58:27.351 [main] INFO  nextflow.cli.CmdRun - Launching `workflow.nf` [trusting_wozniak] DSL2 - revision: 44fe4b1bab
+Jan-04 23:58:27.352 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-04 23:58:27.352 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-04 23:58:27.357 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/shashankkatiyar/.nextflow/secrets/store.json
+Jan-04 23:58:27.362 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@2fe88a09] - activable => nextflow.secret.LocalSecretsProvider@2fe88a09
+Jan-04 23:58:27.396 [main] DEBUG nextflow.Session - Session UUID: 30948c30-4f98-456b-b0a1-b22531538ea8
+Jan-04 23:58:27.397 [main] DEBUG nextflow.Session - Run name: trusting_wozniak
+Jan-04 23:58:27.398 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jan-04 23:58:27.402 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jan-04 23:58:32.433 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (11:07 GMT-04:00)
+  System: Mac OS X 13.0.1
+  Runtime: Groovy 3.0.19 on Java HotSpot(TM) 64-Bit Server VM 21.0.1+12-LTS-29
+  Encoding: UTF-8 (UTF-8)
+  Process: 89849@MacBook-Air-2.local [10.0.0.178]
+  CPUs: 8 - Mem: 8 GB (67.6 MB) - Swap: 5 GB (1.4 GB) - Virtual threads ON
+Jan-04 23:58:32.453 [main] DEBUG nextflow.Session - Work-dir: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work [Mac OS X]
+Jan-04 23:58:32.453 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/bin
+Jan-04 23:58:32.465 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-04 23:58:32.479 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-04 23:58:32.505 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-04 23:58:32.510 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+Jan-04 23:58:32.546 [main] DEBUG nextflow.Session - Session start
+Jan-04 23:58:32.816 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-04 23:58:32.856 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jan-04 23:58:32.856 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-04 23:58:32.859 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jan-04 23:58:32.863 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=8 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jan-04 23:58:32.864 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jan-04 23:58:32.925 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: unzip
+Jan-04 23:58:32.925 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Jan-04 23:58:32.925 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > unzip
+Jan-04 23:58:32.925 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_5ba67e6c77e8f5e7: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/workflow.nf
+Jan-04 23:58:32.925 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jan-04 23:58:32.925 [main] DEBUG nextflow.Session - Session await
+Jan-04 23:58:32.991 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-04 23:58:32.992 [Task submitter] INFO  nextflow.Session - [f7/e17ff8] Submitted process > unzip
+Jan-04 23:58:33.036 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: unzip; status: COMPLETED; exit: 1; error: -; workDir: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work/f7/e17ff86b2b17da018dfe3d77a5c54f]
+Jan-04 23:58:33.041 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=unzip; work-dir=/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work/f7/e17ff86b2b17da018dfe3d77a5c54f
+  error [nextflow.exception.ProcessFailedException]: Process `unzip` terminated with an error exit status (1)
+Jan-04 23:58:33.048 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'unzip'
+
+Caused by:
+  Process `unzip` terminated with an error exit status (1)
+
+Command executed:
+
+  gunzip -k [/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file1.txt.gz, /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file2.txt.gz, /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file3.txt.gz]
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  gunzip: can't stat: [/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file1.txt.gz, ([/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file1.txt.gz,.gz): No such file or directory
+  gunzip: can't stat: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file2.txt.gz, (/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file2.txt.gz,.gz): No such file or directory
+  gunzip: can't stat: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file3.txt.gz] (/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file3.txt.gz].gz): No such file or directory
+
+Work dir:
+  /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work/f7/e17ff86b2b17da018dfe3d77a5c54f
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Jan-04 23:58:33.051 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jan-04 23:58:33.051 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `unzip` terminated with an error exit status (1)
+Jan-04 23:58:33.061 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-04 23:58:33.062 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jan-04 23:58:33.064 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=11ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jan-04 23:58:33.263 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jan-04 23:58:33.275 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

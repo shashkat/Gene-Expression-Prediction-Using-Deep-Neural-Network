@@ -1,0 +1,78 @@
+Jan-04 23:55:21.075 [main] DEBUG nextflow.cli.Launcher - $> nextflow run workflow.nf
+Jan-04 23:55:21.125 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Jan-04 23:55:21.137 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/shashankkatiyar/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Jan-04 23:55:21.142 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-04 23:55:21.143 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-04 23:55:21.144 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jan-04 23:55:21.151 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-04 23:55:21.190 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Jan-04 23:55:21.200 [main] INFO  nextflow.cli.CmdRun - Launching `workflow.nf` [agitated_shirley] DSL2 - revision: c55ce65f29
+Jan-04 23:55:21.201 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-04 23:55:21.201 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-04 23:55:21.207 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/shashankkatiyar/.nextflow/secrets/store.json
+Jan-04 23:55:21.210 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@27b22f74] - activable => nextflow.secret.LocalSecretsProvider@27b22f74
+Jan-04 23:55:21.248 [main] DEBUG nextflow.Session - Session UUID: 9fdf3b53-ded4-4c40-92a7-9830b4ec98a4
+Jan-04 23:55:21.248 [main] DEBUG nextflow.Session - Run name: agitated_shirley
+Jan-04 23:55:21.249 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jan-04 23:55:21.256 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jan-04 23:55:26.292 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (11:07 GMT-04:00)
+  System: Mac OS X 13.0.1
+  Runtime: Groovy 3.0.19 on Java HotSpot(TM) 64-Bit Server VM 21.0.1+12-LTS-29
+  Encoding: UTF-8 (UTF-8)
+  Process: 89591@MacBook-Air-2.local [10.0.0.178]
+  CPUs: 8 - Mem: 8 GB (76.2 MB) - Swap: 5 GB (1.3 GB) - Virtual threads ON
+Jan-04 23:55:26.316 [main] DEBUG nextflow.Session - Work-dir: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work [Mac OS X]
+Jan-04 23:55:26.317 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/bin
+Jan-04 23:55:26.330 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-04 23:55:26.344 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-04 23:55:26.372 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-04 23:55:26.377 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+Jan-04 23:55:26.420 [main] DEBUG nextflow.Session - Session start
+Jan-04 23:55:26.706 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-04 23:55:26.745 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jan-04 23:55:26.745 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-04 23:55:26.748 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jan-04 23:55:26.752 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=8 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jan-04 23:55:26.754 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jan-04 23:55:26.817 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_dba746ed5e825bc2: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/workflow.nf
+Jan-04 23:55:26.817 [main] DEBUG nextflow.Session - Session aborted -- Cause: No such property: echo for class: nextflow.script.WorkflowBinding
+Jan-04 23:55:26.829 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jan-04 23:55:26.829 [main] ERROR nextflow.cli.Launcher - @unknown
+groovy.lang.MissingPropertyException: No such property: echo for class: nextflow.script.WorkflowBinding
+	at groovy.lang.Binding.getVariable(Binding.java:61)
+	at nextflow.script.WorkflowBinding.getVariable(WorkflowBinding.groovy:140)
+	at groovy.lang.Binding.getProperty(Binding.java:116)
+	at nextflow.script.WorkflowBinding.getProperty(WorkflowBinding.groovy:129)
+	at org.codehaus.groovy.runtime.InvokerHelper.getProperty(InvokerHelper.java:190)
+	at groovy.lang.Closure.getPropertyTryThese(Closure.java:320)
+	at groovy.lang.Closure.getPropertyDelegateFirst(Closure.java:310)
+	at groovy.lang.Closure.getProperty(Closure.java:296)
+	at org.codehaus.groovy.runtime.callsite.PogoGetPropertySite.getProperty(PogoGetPropertySite.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callGroovyObjectGetProperty(AbstractCallSite.java:341)
+	at Script_dba746ed5e825bc2$_runScript_closure2$_closure4.doCall(Script_dba746ed5e825bc2:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at groovy.lang.Closure.call(Closure.java:427)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:204)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:188)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.ChainableDef$invoke_a.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:183)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:242)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:137)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:372)
+	at nextflow.cli.Launcher.run(Launcher.groovy:499)
+	at nextflow.cli.Launcher.main(Launcher.groovy:670)

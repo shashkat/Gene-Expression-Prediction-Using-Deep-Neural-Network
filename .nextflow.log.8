@@ -1,0 +1,82 @@
+Jan-04 23:56:31.824 [main] DEBUG nextflow.cli.Launcher - $> nextflow run workflow.nf
+Jan-04 23:56:31.876 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Jan-04 23:56:31.887 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/shashankkatiyar/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Jan-04 23:56:31.893 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-04 23:56:31.893 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-04 23:56:31.895 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jan-04 23:56:31.902 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-04 23:56:31.942 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Jan-04 23:56:31.953 [main] INFO  nextflow.cli.CmdRun - Launching `workflow.nf` [scruffy_mahavira] DSL2 - revision: 7e8f0eea76
+Jan-04 23:56:31.953 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-04 23:56:31.953 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-04 23:56:31.959 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/shashankkatiyar/.nextflow/secrets/store.json
+Jan-04 23:56:31.963 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@27b22f74] - activable => nextflow.secret.LocalSecretsProvider@27b22f74
+Jan-04 23:56:31.998 [main] DEBUG nextflow.Session - Session UUID: 33dfb723-2eba-405e-92cf-a0550f6f535b
+Jan-04 23:56:31.998 [main] DEBUG nextflow.Session - Run name: scruffy_mahavira
+Jan-04 23:56:31.999 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jan-04 23:56:32.003 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jan-04 23:56:37.039 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (11:07 GMT-04:00)
+  System: Mac OS X 13.0.1
+  Runtime: Groovy 3.0.19 on Java HotSpot(TM) 64-Bit Server VM 21.0.1+12-LTS-29
+  Encoding: UTF-8 (UTF-8)
+  Process: 89649@MacBook-Air-2.local [10.0.0.178]
+  CPUs: 8 - Mem: 8 GB (69.6 MB) - Swap: 5 GB (1.4 GB) - Virtual threads ON
+Jan-04 23:56:37.058 [main] DEBUG nextflow.Session - Work-dir: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work [Mac OS X]
+Jan-04 23:56:37.058 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/bin
+Jan-04 23:56:37.071 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-04 23:56:37.084 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-04 23:56:37.110 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-04 23:56:37.115 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+Jan-04 23:56:37.153 [main] DEBUG nextflow.Session - Session start
+Jan-04 23:56:37.428 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-04 23:56:37.469 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jan-04 23:56:37.469 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-04 23:56:37.473 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jan-04 23:56:37.476 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=8 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jan-04 23:56:37.478 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jan-04 23:56:37.540 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: unzip
+Jan-04 23:56:37.541 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Jan-04 23:56:37.541 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > unzip
+Jan-04 23:56:37.542 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_bf20380748a3cb72: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/workflow.nf
+Jan-04 23:56:37.542 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jan-04 23:56:37.542 [main] DEBUG nextflow.Session - Session await
+Jan-04 23:56:37.611 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-04 23:56:37.612 [Task submitter] INFO  nextflow.Session - [20/5cacc3] Submitted process > unzip
+Jan-04 23:56:37.653 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: unzip; status: COMPLETED; exit: 1; error: -; workDir: /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work/20/5cacc3af13e34c1d7720a50683a661]
+Jan-04 23:56:37.656 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=unzip; work-dir=/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work/20/5cacc3af13e34c1d7720a50683a661
+  error [nextflow.exception.ProcessFailedException]: Process `unzip` terminated with an error exit status (1)
+Jan-04 23:56:37.662 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'unzip'
+
+Caused by:
+  Process `unzip` terminated with an error exit status (1)
+
+Command executed:
+
+  gunzip -k [ENCFF696ETL.fastq.gz, ENCFF657UWH.fastq.gz, ENCFF326UXM.fastq.gz]
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  gunzip: can't stat: [ENCFF696ETL.fastq.gz, ([ENCFF696ETL.fastq.gz,.gz): No such file or directory
+  gunzip: can't stat: ENCFF657UWH.fastq.gz, (ENCFF657UWH.fastq.gz,.gz): No such file or directory
+  gunzip: can't stat: ENCFF326UXM.fastq.gz] (ENCFF326UXM.fastq.gz].gz): No such file or directory
+
+Work dir:
+  /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/work/20/5cacc3af13e34c1d7720a50683a661
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Jan-04 23:56:37.665 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jan-04 23:56:37.666 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `unzip` terminated with an error exit status (1)
+Jan-04 23:56:37.675 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-04 23:56:37.676 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jan-04 23:56:37.678 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=11ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jan-04 23:56:37.878 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jan-04 23:56:37.889 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
