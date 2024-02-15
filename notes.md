@@ -113,3 +113,6 @@ Also, for the ATACseq data, apparently there are a bit more steps. Kallisto will
 
 So, I can try that next- see what are the tools and how many of those can be run on my pc and if there is a pseudo-aligner type thing for ATACseq data too.
 
+Another thing I can do is add small steps in the RNA pipeline only and add them to the Nextflow pipeline. One example could be just unzipping the fastq files before the Kallisto quantification.
+
+
