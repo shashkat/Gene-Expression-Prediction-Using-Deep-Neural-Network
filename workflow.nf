@@ -1,30 +1,73 @@
-// params.str = ['/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file1.txt.gz', '/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file2.txt.gz', '/Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp/file3.txt.gz']
-// process gatherfiles {
+#!/usr/bin/env nextflow
+// params.in = "$baseDir/raw_data_1"
+params.in = "$baseDir"
+// params.in = ""
 
-//     output:
-//     stdout
+process testingEnv{
 
-//     """
-//     find /Users/shashankkatiyar/Documents/github_repos/Gene-Expression-Prediction-Using-Deep-Neural-Network/raw_data_temp -type f -name '*.gz'
-//     """
-// }
+    output:
+    stdout
+
+    """
+    which python
+    """
+}
+
+process listDir{
+
+    input:
+    path input
+
+    output:
+    stdout
+
+    """
+    ls $input
+    """
+}
 
 process extractFastq{
 
     input:
-    path input_file
-    path "$baseDir/raw_data/input_file"
+    path dir
 
-    output: 
-    path ""
+    output:
+    path '*.fastq'
 
     script:
     """
-    gunzip -c input_file 
+    gunzip -k $dir/*.gz
     """
 }
 
+process head{
+    input:
+    path input
 
+    output:
+    stdout
+
+    """
+    head -n 5 $input
+    """
+}
+
+process runKallisto{
+    input:
+    path fastq
+    path index
+    path dir
+
+    """
+    kallisto quant -i $index -o $dir $fastq
+    """
+}
+
+workflow{
+    // listDir(params.in) | head -n 5
+    extractFastq(params.in) | runKallisto
+    // testingEnv | view
+}
 
 // // Define the process to extract .gz files
 // process extractFastq {
@@ -43,7 +86,7 @@ process extractFastq{
 //     """
 // }
 
-// // Define the process to run kallisto quant on each extracted file
+// Define the process to run kallisto quant on each extracted file
 // process runKallisto {
 
 //     // Input: list of extracted fastq files
